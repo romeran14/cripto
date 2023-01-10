@@ -14,8 +14,8 @@ const News = ({simplified}) => {
   const [newsCategory, setNewsCategory] = useState('Cryptocurrency');
   const { data } = useGetCryptosQuery(100);
   const { data: cryptoNews, isFecthing } = useGetCryptoNewsQuery({ newsCategory, count: simplified ? 6 : 12 });
-  console.log(cryptoNews)
-  if(isFecthing) return <Spin />
+
+  if(isFecthing) return <Spin/>
   return (
     <Row gutter={[24, 24]}>
     {!simplified && (
@@ -29,7 +29,7 @@ const News = ({simplified}) => {
           filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
         >
           <Option value="Cryptocurency">Cryptocurrency</Option>
-          {data?.data?.coins?.map((currency) => <Option value={currency.name}>{currency.name}</Option>)}
+          {data?.data?.coins?.map((currency) => <Option key={Math.random()} value={currency.name}>{currency.name}</Option>)}
         </Select>
       </Col>
     )}

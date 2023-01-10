@@ -3,7 +3,6 @@ import Layout from 'antd/es/layout/layout'
 import Typography from 'antd/es/typography/Typography'
 import Navbar from './components/Navbar'
 import Homepage from './components/Homepage'
-import Exchanges from './components/Exchanges'
 import News from './components/News'
 import Cryptodetails from './components/Cryptodetails'
 import Cryptocurrencies from './components/Cryptocurrencies'
@@ -22,7 +21,6 @@ function App() {
           <div className="routes">
             <Routes>
               <Route path="/" element={<Homepage />}></Route>
-              <Route path="/exchanges" element={<Exchanges />}></Route>
               <Route
                 path="/cryptocurrencies"
                 element={<Cryptocurrencies />}
